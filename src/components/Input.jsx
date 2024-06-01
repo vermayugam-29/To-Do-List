@@ -19,13 +19,15 @@ const Input = ({ lists, setLists }) => {
         const newTask = { id: lists.length, task: task };
         setLists(prev => [...prev, newTask]);
         setTask('');
+        const newList = [...lists,newTask]
+        localStorage.setItem("prevData" , JSON.stringify(newList));
     }
 
     return (
         <div className='container'>
             <form className='form' onSubmit={submitHandler}>
                 <input className='inputBox' value={task} onChange={changeHandler} type="text" />
-                <button className='btn' type='submit'>Enter</button>
+                <button className='btn' type='submit'>Add</button>
             </form>
 
             <div className='innerContainer'>

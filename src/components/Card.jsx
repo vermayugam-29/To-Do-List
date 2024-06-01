@@ -13,7 +13,9 @@ const Card = ({ index, lists, list, setLists }) => {
     const [star,setStar] = useState(false);
 
     const deleteHandler = () => {
-        setLists(prev => prev.filter(task => task.id !== list.id));
+        let newList = lists.filter(task => task.id !== list.id);
+        setLists(newList);
+        localStorage.setItem("prevData" , JSON.stringify(newList));
     }
 
     const upHandler = () => {
@@ -23,6 +25,7 @@ const Card = ({ index, lists, list, setLists }) => {
         newList[index] = newList[index - 1];
         newList[index - 1] = temp;
         setLists(newList);
+        localStorage.setItem("prevData" , JSON.stringify(newList));
     }
 
     const downHandler = () => {
@@ -32,6 +35,7 @@ const Card = ({ index, lists, list, setLists }) => {
         newList[index] = newList[index + 1];
         newList[index + 1] = temp;
         setLists(newList);
+        localStorage.setItem("prevData" , JSON.stringify(newList));
     }
 
     const editHandler = () => {
@@ -39,9 +43,11 @@ const Card = ({ index, lists, list, setLists }) => {
             const newList = [...lists];
             newList[index].task = currTask;
             setLists(newList);
+            localStorage.setItem("prevData" , JSON.stringify(newList));
         }
         setEdit(!edit);
     }
+    
 
     const changeHandler = (e) => {
         setCurrTask(e.target.value);

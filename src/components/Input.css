@@ -10,11 +10,14 @@
     width: 40rem;
     height: 2rem;
     margin-right: 10px;
+    border-radius: 10px;
 }
 .btn{
     width: 3rem;
     height: 2rem;
+    margin-top: 0.15rem;
     cursor: pointer;
+    border-radius: 10px;
 }
 .btn:hover{
     background-color: #242424;
