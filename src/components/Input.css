@@ -1,0 +1,42 @@
+.container{
+    display: flex;
+    flex-direction: column;
+}
+.form{
+    display: flex;
+    flex-direction: row;
+}
+.inputBox {
+    width: 40rem;
+    height: 2rem;
+    margin-right: 10px;
+}
+.btn{
+    width: 3rem;
+    height: 2rem;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: #242424;
+}
+.innerContainer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+
+@media screen and (max-width: 768px) {
+    .form {
+      flex-direction: column;
+    }
+    .inputBox {
+      width: 100%; /* Adjust width as needed */
+      margin-right: 0;
+      margin-bottom: 10px; /* Add margin bottom for spacing */
+    }
+    .btn {
+      width: 100%; /* Adjust width as needed */
+      margin-top: 10px; /* Add margin top for spacing */
+    }
+  }
